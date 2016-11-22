@@ -1,5 +1,7 @@
 package com.dai.jigsaw.core.generic;
 
+import java.util.List;
+
 import com.dai.jigsaw.core.feature.orm.mybatis.WhereParam;
 
 /**
@@ -57,6 +59,6 @@ public interface GenericDao<Model, PK> {
      * @param id 主键
      * @return
      */
-    Model selectByWhereParam( WhereParam whereParam);
+    List<Model> selectByWhereParam( WhereParam whereParam);
 
 }

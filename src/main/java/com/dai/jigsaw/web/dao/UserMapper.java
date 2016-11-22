@@ -4,6 +4,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 import com.dai.jigsaw.core.feature.orm.mybatis.Page;
+import com.dai.jigsaw.core.feature.orm.mybatis.WhereParam;
 import com.dai.jigsaw.core.generic.GenericDao;
 import com.dai.jigsaw.web.model.User;
 import com.dai.jigsaw.web.model.UserExample;
@@ -53,4 +54,12 @@ public interface UserMapper extends GenericDao<User, Long> {
      * @return
      */
     List<User> selectByExampleAndPage(Page<User> page, UserExample example);
+    /**
+     * 分页条件查询
+     * 
+     * @param page
+     * @param example
+     * @return
+     */
+    List<User> selectByWhereParamAndPage(Page<User> page, WhereParam whereParam);
 }

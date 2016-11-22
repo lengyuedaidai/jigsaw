@@ -5,6 +5,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import com.dai.jigsaw.core.feature.orm.mybatis.Page;
 import com.dai.jigsaw.core.feature.orm.mybatis.WhereParam;
 import com.dai.jigsaw.core.generic.GenericDao;
 import com.dai.jigsaw.core.generic.GenericServiceImpl;
@@ -65,14 +66,13 @@ public class UserServiceImpl extends GenericServiceImpl<User, Long> implements U
 
 	@Override
 	public int deleteById(Long id) {
-		// TODO 自动生成的方法存根
 		return 0;
 	}
 
-	@Override
 	public List<User> select(WhereParam whereParam) {
-		// TODO 自动生成的方法存根
-		return null;
+		return userMapper.selectByWhereParam(whereParam);
 	}
-
+	public List<User> selectPage(Page<User> page,WhereParam whereParam) {
+		return userMapper.selectByWhereParamAndPage(page, whereParam);
+	}
 }

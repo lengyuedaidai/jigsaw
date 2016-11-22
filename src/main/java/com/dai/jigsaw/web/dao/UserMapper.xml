@@ -210,6 +210,22 @@
         where id = #{id,jdbcType=BIGINT}
     </update>
 
+
+    <select id="selectByWhereParam" resultMap="BaseResultMap" parameterType="com.dai.jigsaw.core.feature.orm.mybatis.WhereParam">
+        select
+        <include refid="Base_Column_List" />
+        from user
+        where ${whereString}
+    </select>
+
+	 <select id="selectByWhereParamAndPage" resultMap="BaseResultMap" parameterType="com.dai.jigsaw.core.feature.orm.mybatis.WhereParam">
+        select
+        <include refid="Base_Column_List" />
+        from user
+        where ${whereString}
+    </select>
+
+
     <!-- 用户登录验证查询 -->
     <select id="authentication" resultMap="BaseResultMap" parameterType="map">
         select
