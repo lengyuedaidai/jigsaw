@@ -1,4 +1,4 @@
-package com.dai.jigsaw.web.security;
+package com.tpt.vehicle.web.security;
 
 import java.util.List;
 import javax.annotation.Resource;
@@ -12,17 +12,17 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.stereotype.Component;
 
-import com.dai.jigsaw.web.model.Permission;
-import com.dai.jigsaw.web.model.Role;
-import com.dai.jigsaw.web.model.User;
-import com.dai.jigsaw.web.service.PermissionService;
-import com.dai.jigsaw.web.service.RoleService;
-import com.dai.jigsaw.web.service.UserService;
+import com.tpt.vehicle.web.model.Permission;
+import com.tpt.vehicle.web.model.Role;
+import com.tpt.vehicle.web.model.User;
+import com.tpt.vehicle.web.service.PermissionService;
+import com.tpt.vehicle.web.service.RoleService;
+import com.tpt.vehicle.web.service.UserService;
 
 /**
  * 用户身份验证,授权 Realm 组件
  * 
- * @author StarZou
+ * @author daidai
  * @since 2014年6月11日 上午11:35:28
  **/
 @Component(value = "securityRealm")

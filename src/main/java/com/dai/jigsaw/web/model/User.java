@@ -2,12 +2,15 @@ package com.dai.jigsaw.web.model;
 
 import java.util.Date;
 
+import org.springframework.stereotype.Component;
+
 /**
  * 用户模型
  * 
  * @author StarZou
  * @since 2014年7月5日 下午12:07:20
  **/
+@Component("USER_MODEL")
 public class User {
     private Long id;
 

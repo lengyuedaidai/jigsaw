@@ -203,4 +203,23 @@
         WHERE rp.role_id =
         #{id,jdbcType=BIGINT}
     </select>
+    
+    <select id="selectByWhereParam" resultMap="BaseResultMap" parameterType="com.dai.jigsaw.core.feature.orm.mybatis.WhereParam">
+        select
+        <include refid="Base_Column_List" />
+        from permission
+        where ${whereString}
+    </select>
+
+	 <select id="selectByWhereParamAndPage" resultMap="BaseResultMap" parameterType="com.dai.jigsaw.core.feature.orm.mybatis.WhereParam">
+        select
+        <include refid="Base_Column_List" />
+        from permission
+        where ${whereString}
+    </select>
+    
+    <delete id="deleteByPrimaryKeySelective" parameterType="com.dai.jigsaw.web.model.Permission">
+        delete from permission where id = #{id,jdbcType=BIGINT}
+    </delete>
+    
 </mapper>

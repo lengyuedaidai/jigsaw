@@ -1,11 +1,14 @@
 package com.dai.jigsaw.web.model;
 
+import org.springframework.stereotype.Component;
+
 /**
  * 权限模型
  * 
  * @author StarZou
  * @since 2014年7月17日 下午1:02:55
  **/
+@Component("PERMISSION_MODEL")
 public class Permission {
     private Long id;
 

@@ -2,6 +2,7 @@ package com.dai.jigsaw.core.generic;
 
 import java.util.List;
 
+import com.dai.jigsaw.core.feature.orm.mybatis.Page;
 import com.dai.jigsaw.core.feature.orm.mybatis.WhereParam;
 
 /**
@@ -43,7 +44,7 @@ public interface GenericService<Model, PK> {
      */
     int deleteById(PK id);
     
-    List<Model> select(WhereParam whereParam);
+    
 
     /**
      * 通过主键, 查询对象
@@ -52,21 +53,20 @@ public interface GenericService<Model, PK> {
      * @return model 对象
      */
     Model selectById(PK id);
-
-
     /**
-     * 查询单个对象
-     *
-     * @return 对象
+     * 按条件分页查询
+     * @param page
+     * @param whereParam
+     * @return
      */
-    Model selectOne();
-
-
+    List<Model> selectPage(Page<Model> page, WhereParam whereParam);
     /**
-     * 查询多个对象
-     *
-     * @return 对象集合
+     * 按条件查询
+     * @param whereParam
+     * @return
      */
-    List<Model> selectList();
+    List<Model> select(WhereParam whereParam);
+
+	
 
 }

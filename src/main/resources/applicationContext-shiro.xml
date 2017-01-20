@@ -14,11 +14,14 @@
         <property name="unauthorizedUrl" value="/rest/page/401"/>
         <property name="filterChainDefinitions">
             <value>
+               
                 <!-- 静态资源允许访问 -->
                 /app/** = anon
                 /assets/** = anon
                 <!-- 登录页允许访问 -->
                 /rest/user/login = anon
+                 <!-- webService不认证 -->
+                /rest/dataServices/**= anon
                 <!-- 其他资源需要认证 -->
                 /** = authc
             </value>

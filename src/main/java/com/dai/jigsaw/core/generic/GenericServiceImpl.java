@@ -2,6 +2,9 @@ package com.dai.jigsaw.core.generic;
 
 import java.util.List;
 
+import com.dai.jigsaw.core.feature.orm.mybatis.Page;
+import com.dai.jigsaw.core.feature.orm.mybatis.WhereParam;
+
 /**
  * GenericService的实现类, 其他的自定义 ServiceImpl, 继承自它,可以获得常用的增删查改操作,
  * 未实现的方法有 子类各自实现
@@ -12,7 +15,7 @@ import java.util.List;
  * @author StarZou
  * @since 2014年6月9日 下午6:14:06
  */
-public abstract class GenericServiceImpl<Model, PK> implements GenericService<Model, PK> {
+public abstract  class GenericServiceImpl<Model, PK> implements GenericService<Model, PK> {
 
     /**
      * 定义成抽象方法,由子类实现,完成dao的注入
@@ -26,7 +29,8 @@ public abstract class GenericServiceImpl<Model, PK> implements GenericService<Mo
      *
      * @param model 对象
      */
-    public int insert(Model model) {
+    @Override
+	public int insert(Model model) {
         return getDao().insertSelective(model);
     }
 
@@ -35,7 +39,8 @@ public abstract class GenericServiceImpl<Model, PK> implements GenericService<Mo
      *
      * @param model 对象
      */
-    public int update(Model model) {
+    @Override
+	public int update(Model model) {
         return getDao().updateByPrimaryKeySelective(model);
     }
 
@@ -44,7 +49,8 @@ public abstract class GenericServiceImpl<Model, PK> implements GenericService<Mo
      *
      * @param id 主键
      */
-    public int delete(Model model) {
+    @Override
+	public int delete(Model model) {
         return getDao().deleteByPrimaryKeySelective(model);
     }
 
@@ -54,18 +60,26 @@ public abstract class GenericServiceImpl<Model, PK> implements GenericService<Mo
      * @param id 主键
      * @return
      */
-    public Model selectById(PK id) {
+    @Override
+	public Model selectById(PK id) {
         return getDao().selectByPrimaryKey(id);
     }
 
+	@Override
+	public int deleteById(PK id) {
+		// TODO 自动生成的方法存根
+		return 0;
+	}
 
-    @Override
-    public Model selectOne() {
-        return null;
-    }
+	@Override
+	public List<Model> selectPage(Page<Model> page, WhereParam whereParam) {
+		return getDao().selectByWhereParamAndPage(page, whereParam);
+	}
 
-    @Override
-    public List<Model> selectList() {
-        return null;
-    }
+	@Override
+	public List<Model> select(WhereParam whereParam) {
+		// TODO 自动生成的方法存根
+		return getDao().selectByWhereParam(whereParam);
+	}
+
 }

@@ -18,7 +18,7 @@ import com.dai.jigsaw.web.service.RoleService;
  * @author StarZou
  * @since 2014年6月10日 下午4:16:33
  */
-@Service
+@Service("ROLE_SERVICE")
 public class RoleServiceImpl extends GenericServiceImpl<Role, Long> implements RoleService {
 
     @Resource
@@ -40,10 +40,5 @@ public class RoleServiceImpl extends GenericServiceImpl<Role, Long> implements R
 		return 0;
 	}
 
-	@Override
-	public List<Role> select(WhereParam whereParam) {
-		// TODO 自动生成的方法存根
-		return null;
-	}
 
 }

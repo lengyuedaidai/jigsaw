@@ -18,7 +18,7 @@ import com.dai.jigsaw.web.service.PermissionService;
  * @author StarZou
  * @since 2014年6月10日 下午12:05:03
  */
-@Service
+@Service("PERMISSION_SERVICE")
 public class PermissionServiceImpl extends GenericServiceImpl<Permission, Long> implements PermissionService {
 
     @Resource
@@ -41,9 +41,4 @@ public class PermissionServiceImpl extends GenericServiceImpl<Permission, Long> 
 		return 0;
 	}
 
-	@Override
-	public List<Permission> select(WhereParam whereParam) {
-		// TODO 自动生成的方法存根
-		return null;
-	}
 }

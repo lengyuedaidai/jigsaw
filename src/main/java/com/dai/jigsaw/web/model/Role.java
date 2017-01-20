@@ -1,11 +1,14 @@
 package com.dai.jigsaw.web.model;
 
+import org.springframework.stereotype.Component;
+
 /**
  * 角色模型
  * 
  * @author StarZou
  * @since 2014年7月17日 下午1:02:25
  **/
+@Component("ROLE_MODEL")
 public class Role {
     private Long id;
 

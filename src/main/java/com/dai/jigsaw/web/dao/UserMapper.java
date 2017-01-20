@@ -20,21 +20,25 @@ public interface UserMapper extends GenericDao<User, Long> {
 
     int deleteByExample(UserExample example);
 
-    int deleteByPrimaryKey(Long id);
+    @Override
+	int deleteByPrimaryKey(Long id);
 
     int insert(User record);
 
-    int insertSelective(User record);
+    @Override
+	int insertSelective(User record);
 
     List<User> selectByExample(UserExample example);
 
-    User selectByPrimaryKey(Long id);
+    @Override
+	User selectByPrimaryKey(Long id);
 
     int updateByExampleSelective(@Param("record") User record, @Param("example") UserExample example);
 
     int updateByExample(@Param("record") User record, @Param("example") UserExample example);
 
-    int updateByPrimaryKeySelective(User record);
+    @Override
+	int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
 
@@ -61,5 +65,6 @@ public interface UserMapper extends GenericDao<User, Long> {
      * @param example
      * @return
      */
-    List<User> selectByWhereParamAndPage(Page<User> page, WhereParam whereParam);
+    @Override
+	List<User> selectByWhereParamAndPage(Page<User> page, WhereParam whereParam);
 }

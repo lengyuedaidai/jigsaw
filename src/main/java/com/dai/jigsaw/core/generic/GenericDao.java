@@ -2,6 +2,7 @@ package com.dai.jigsaw.core.generic;
 
 import java.util.List;
 
+import com.dai.jigsaw.core.feature.orm.mybatis.Page;
 import com.dai.jigsaw.core.feature.orm.mybatis.WhereParam;
 
 /**
@@ -54,11 +55,18 @@ public interface GenericDao<Model, PK> {
      */
     Model selectByPrimaryKey(PK id);
     /**
-     * 通过主键, 查询对象
+     * 通过条件, 查询对象
      *
      * @param id 主键
      * @return
      */
     List<Model> selectByWhereParam( WhereParam whereParam);
+    /**
+     * 通过条件, 查询对象
+     *
+     * @param id 主键
+     * @return
+     */
+    List<Model> selectByWhereParamAndPage(Page<Model> page,WhereParam whereParam);
 
 }

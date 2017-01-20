@@ -20,7 +20,7 @@ import com.dai.jigsaw.web.service.UserService;
  * @author StarZou
  * @since 2014年7月5日 上午11:54:24
  */
-@Service
+@Service("USER_SERVICE")
 public class UserServiceImpl extends GenericServiceImpl<User, Long> implements UserService {
 
     @Resource
@@ -67,12 +67,5 @@ public class UserServiceImpl extends GenericServiceImpl<User, Long> implements U
 	@Override
 	public int deleteById(Long id) {
 		return 0;
-	}
-
-	public List<User> select(WhereParam whereParam) {
-		return userMapper.selectByWhereParam(whereParam);
-	}
-	public List<User> selectPage(Page<User> page,WhereParam whereParam) {
-		return userMapper.selectByWhereParamAndPage(page, whereParam);
 	}
 }

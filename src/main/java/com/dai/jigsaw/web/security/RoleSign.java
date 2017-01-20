@@ -1,4 +1,4 @@
-package com.dai.jigsaw.web.security;
+package com.tpt.vehicle.web.security;
 
 /**
  * 角色标识配置类, <br>
@@ -12,7 +12,7 @@ package com.dai.jigsaw.web.security;
  * }
  * </pre>
  * 
- * @author StarZou
+ * @author daidai
  * @since 2014年6月17日 下午3:58:51
  **/
 public class RoleSign {
