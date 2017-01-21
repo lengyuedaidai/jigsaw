@@ -1,4 +1,4 @@
-package com.tpt.vehicle.web.security;
+package com.dai.jigsaw.web.security;
 
 /**
  * 系统资源,模块

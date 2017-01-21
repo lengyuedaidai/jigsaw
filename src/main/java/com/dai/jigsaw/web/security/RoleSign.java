@@ -1,4 +1,4 @@
-package com.tpt.vehicle.web.security;
+package com.dai.jigsaw.web.security;
 
 /**
  * 角色标识配置类, <br>
