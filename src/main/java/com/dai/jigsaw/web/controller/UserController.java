@@ -39,7 +39,6 @@ public class UserController {
 
 	/**
 	 * 用户登录
-	 * 
 	 * @param user
 	 * @param result
 	 * @return
@@ -62,6 +61,7 @@ public class UserController {
 					user.getUsername(), user.getPassword());
 			//TokenManager.addToken(a, request.getSession());
 			subject.login(a);
+			subject.getPrincipals();
 			// 验证成功在Session中保存用户信息
 			final User authUserInfo = userService
 					.selectByUsername(user.getUsername());
