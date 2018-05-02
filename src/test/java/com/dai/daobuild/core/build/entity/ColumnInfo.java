@@ -1,4 +1,4 @@
-package com.dai.daobuild.test.build.entity;
+package com.dai.daobuild.core.build.entity;
 
 /**
  * 存储字段信息

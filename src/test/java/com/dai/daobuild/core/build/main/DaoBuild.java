@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.dai.daobuild.test.build.main;
+package com.dai.daobuild.core.build.main;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,17 +11,17 @@ import java.util.List;
 
 import com.dai.daobuild.core.util.PropertiesUtil;
 import com.dai.daobuild.core.util.StringUtil;
-import com.dai.daobuild.test.build.JDBC.TableUtil;
-import com.dai.daobuild.test.build.entity.DaoNames;
-import com.dai.daobuild.test.build.entity.FileInfo;
-import com.dai.daobuild.test.build.entity.TableInfo;
-import com.dai.daobuild.test.build.render.RenderBase;
-import com.dai.daobuild.test.build.render.RenderMapperClass;
-import com.dai.daobuild.test.build.render.RenderMapperXML;
-import com.dai.daobuild.test.build.render.RenderModelClass;
-import com.dai.daobuild.test.build.render.RenderParam;
-import com.dai.daobuild.test.build.render.RenderServiceClass;
-import com.dai.daobuild.test.build.render.RenderServiceImplClass;
+import com.dai.daobuild.core.build.JDBC.TableUtil;
+import com.dai.daobuild.core.build.entity.DaoNames;
+import com.dai.daobuild.core.build.entity.FileInfo;
+import com.dai.daobuild.core.build.entity.TableInfo;
+import com.dai.daobuild.core.build.render.RenderBase;
+import com.dai.daobuild.core.build.render.RenderMapperClass;
+import com.dai.daobuild.core.build.render.RenderMapperXML;
+import com.dai.daobuild.core.build.render.RenderModelClass;
+import com.dai.daobuild.core.build.render.RenderParam;
+import com.dai.daobuild.core.build.render.RenderServiceClass;
+import com.dai.daobuild.core.build.render.RenderServiceImplClass;
 
 import freemarker.template.TemplateException;
 

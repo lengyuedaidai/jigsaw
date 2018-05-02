@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.dai.daobuild.test.build.main;
+package com.dai.daobuild.core.build.main;
 
 import com.dai.daobuild.core.util.PropertiesUtil;
 

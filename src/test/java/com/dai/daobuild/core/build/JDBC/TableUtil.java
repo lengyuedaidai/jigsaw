@@ -1,4 +1,4 @@
-package com.dai.daobuild.test.build.JDBC;
+package com.dai.daobuild.core.build.JDBC;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -12,8 +12,8 @@ import java.util.List;
 import java.util.Set;
 
 import com.dai.daobuild.core.util.PropertiesUtil;
-import com.dai.daobuild.test.build.entity.ColumnInfo;
-import com.dai.daobuild.test.build.entity.TableInfo;
+import com.dai.daobuild.core.build.entity.ColumnInfo;
+import com.dai.daobuild.core.build.entity.TableInfo;
 
 /**
  * 获取表结构信息类

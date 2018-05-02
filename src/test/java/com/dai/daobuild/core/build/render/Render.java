@@ -1,4 +1,4 @@
-package com.dai.daobuild.test.build.render;
+package com.dai.daobuild.core.build.render;
 
 import java.io.IOException;
 

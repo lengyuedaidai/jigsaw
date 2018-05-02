@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.dai.daobuild.test.build.entity;
+package com.dai.daobuild.core.build.entity;
 
 /**
  * 功能说明:

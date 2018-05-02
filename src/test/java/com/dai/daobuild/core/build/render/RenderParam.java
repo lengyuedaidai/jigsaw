@@ -1,11 +1,11 @@
-package com.dai.daobuild.test.build.render;
+package com.dai.daobuild.core.build.render;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.dai.daobuild.test.build.entity.FileInfo;
-import com.dai.daobuild.test.build.entity.TableInfo;
+import com.dai.daobuild.core.build.entity.FileInfo;
+import com.dai.daobuild.core.build.entity.TableInfo;
 
 /**
  * @author Dai 渲染参数

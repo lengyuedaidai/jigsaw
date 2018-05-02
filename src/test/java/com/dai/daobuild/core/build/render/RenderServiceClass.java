@@ -1,19 +1,19 @@
-package com.dai.daobuild.test.build.render;
+package com.dai.daobuild.core.build.render;
 
 import java.io.IOException;
 
-import com.dai.daobuild.test.build.entity.FileInfo;
+import com.dai.daobuild.core.build.entity.FileInfo;
 
 /**
  * @author Dai
  *
  */
-public class RenderServiceImplClass extends RenderBase {
+public class RenderServiceClass extends RenderBase {
 
 	/**
 	 * @throws IOException
 	 */
-	public RenderServiceImplClass(RenderParam param) throws IOException {
+	public RenderServiceClass(RenderParam param) throws IOException {
 		super(param);
 	}
 
@@ -26,7 +26,7 @@ public class RenderServiceImplClass extends RenderBase {
 	 */
 	@Override
 	public FileInfo getFileInfoByParam(RenderParam param) {
-		return param.getFileInfo("serviceImplClassFile");
+		return param.getFileInfo("serviceClassFile");
 	}
 
 }

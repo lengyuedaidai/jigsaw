@@ -1,4 +1,4 @@
-package com.dai.daobuild.test.build.entity;
+package com.dai.daobuild.core.build.entity;
 
 import java.util.ArrayList;
 import java.util.HashSet;

@@ -1,8 +1,8 @@
-package com.dai.daobuild.test.build.render;
+package com.dai.daobuild.core.build.render;
 
 import java.io.IOException;
 
-import com.dai.daobuild.test.build.entity.FileInfo;
+import com.dai.daobuild.core.build.entity.FileInfo;
 
 /**
  * @author Dai
