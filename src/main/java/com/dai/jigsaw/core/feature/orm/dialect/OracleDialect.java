@@ -34,6 +34,15 @@ public class OracleDialect extends Dialect {
     @Override
     public String getCountString(String sql) {
         // TODO Oracle分页查询
-        return null;
+    	 sql = sql.trim();
+         boolean isForUpdate = false;
+         if (sql.toLowerCase().endsWith(" for update")) {
+             sql = sql.substring(0, sql.length() - 11);
+         }
+         StringBuffer pagingSelect = new StringBuffer(sql.length() + 100);
+         pagingSelect.append("select count(1) from ( ");
+         pagingSelect.append(sql);
+         pagingSelect.append(" ) ");
+        return pagingSelect.toString();
     }
 }
