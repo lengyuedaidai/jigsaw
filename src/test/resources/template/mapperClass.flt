@@ -1,0 +1,7 @@
+package ${fileInfoMap.mapperClassFile.packageName};
+
+import com.account.gms.core.generic.GenericDao;
+import ${fileInfoMap.modelClassFile.packageName}.${fileInfoMap.modelClassFile.name};
+
+public interface ${fileInfoMap.mapperClassFile.name} extends GenericDao<${fileInfoMap.modelClassFile.name}, Long> {
+}

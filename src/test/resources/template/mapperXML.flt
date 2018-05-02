@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="${fileInfoMap.mapperClassFile.packageName}.${fileInfoMap.mapperClassFile.name}">
+    <resultMap id="BaseResultMap" type="${fileInfoMap.modelClassFile.packageName}.${fileInfoMap.modelClassFile.name}">
+    	<#list table.columns as column>
+    		<#if column.isKey>
+    			<id column="${column.columnName}" property="${column.multipleColumnNames.modelName}" jdbcType="${column.columnType}" />
+    		<#else>
+    			<result column="${column.columnName}" property="${column.multipleColumnNames.modelName}" jdbcType="${column.columnType}" />
+    		</#if>
+    	</#list>
+    </resultMap>
+     <sql id="Base_Column_List">
+       <trim prefix="" suffix="" suffixOverrides=",">
+     	<#list table.columns as column>
+     		${column.columnName},
+    	</#list>
+    	</trim>
+    </sql>
+    <!--增加数据 insertSelective-->
+    <insert id="insertSelective" parameterType="${fileInfoMap.modelClassFile.packageName}.${fileInfoMap.modelClassFile.name}">
+        insert into ${table.tableName}
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+        	<#list table.columns as column>
+        		<if test="${column.multipleColumnNames.modelName} != null">
+                	${column.columnName},
+            	</if>
+        	</#list>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+        	<#list table.columns as column>
+        		<if test="${column.multipleColumnNames.modelName} != null">
+        			${r"#{"}${column.multipleColumnNames.modelName},jdbcType=${column.columnType}},
+            	</if>
+        	</#list>
+        </trim>
+    </insert>
+    <!--删除数据 deleteByPrimaryKeySelective-->
+    <delete id="deleteByPrimaryKeySelective" parameterType="${fileInfoMap.modelClassFile.packageName}.${fileInfoMap.modelClassFile.name}">
+        delete from ${table.tableName}
+        where
+		<#list table.columns as column>
+    		<#list table.primaryKeys as pk>
+        		<#if column.columnName==pk>
+        			<#if pk_index != 0> and </#if>${column.columnName} = ${r"#{"}${column.multipleColumnNames.modelName},jdbcType=${column.columnType}}
+            	</#if>
+        	</#list>
+    	</#list>
+    </delete>
+    <delete id="deleteByIds" parameterType="java.lang.String">
+		delete
+		from ${table.tableName}
+		where
+		<#list table.columns as column>
+    		<#list table.primaryKeys as pk>
+        		<#if column.columnName==pk>
+        			<#if pk_index != 0> and </#if>${column.columnName} in ${r"(${_parameter})"}
+            	</#if>
+        	</#list>
+    	</#list>
+	</delete>
+    <!--修改数据 updateByPrimaryKeySelective-->
+    <update id="updateByPrimaryKeySelective" parameterType="${fileInfoMap.modelClassFile.packageName}.${fileInfoMap.modelClassFile.name}">
+        update ${table.tableName}
+        <set>
+        	<#list table.columns as column>
+        		<if test="${column.multipleColumnNames.modelName} != null">
+                	${column.columnName} = ${r"#{"}${column.multipleColumnNames.modelName},jdbcType=${column.columnType}},
+            	</if>
+        	</#list>
+        </set>
+        where 
+    	<#list table.columns as column>
+    		<#list table.primaryKeys as pk>
+        		<#if column.columnName==pk>
+        			<#if pk_index != 0> and </#if>${column.columnName} = ${r"#{"}${column.multipleColumnNames.modelName},jdbcType=${column.columnType}}
+            	</#if>
+        	</#list>
+    	</#list>
+    </update>
+    
+     <select id="selectByWhereParam" resultMap="BaseResultMap" parameterType="com.account.gms.core.feature.orm.mybatis.WhereParam">
+        select
+        	<include refid="Base_Column_List" />
+        from ${table.tableName} 
+        <if test="whereString != null">
+              where ${r'${whereString}'}
+        </if>
+        <if test="orderbyString != null">
+			order by ${r'${orderbyString}'}
+		</if>
+    </select>
+
+	 <select id="selectByWhereParamAndPage" resultMap="BaseResultMap" parameterType="com.account.gms.core.feature.orm.mybatis.WhereParam">
+        select
+        <include refid="Base_Column_List" />
+        from ${table.tableName} 
+        <if test="whereString != null">
+              where ${r'${whereString}'}
+        </if>
+        <if test="orderbyString != null">
+			order by ${r'${orderbyString}'}
+		</if>
+    </select>
+    
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List" />
+        from ${table.tableName} 
+        where  
+		<#list table.columns as column>
+    		<#list table.primaryKeys as pk>
+        		<#if column.columnName==pk>
+        			<#if pk_index != 0> and </#if>${column.columnName} = ${r"#{"}${column.multipleColumnNames.modelName},jdbcType=${column.columnType}}
+            	</#if>
+        	</#list>
+    	</#list>
+    </select>
+    
+    
+</mapper>

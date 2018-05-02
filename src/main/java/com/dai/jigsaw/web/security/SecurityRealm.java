@@ -19,6 +19,7 @@ import com.dai.jigsaw.web.service.PermissionService;
 import com.dai.jigsaw.web.service.RoleService;
 import com.dai.jigsaw.web.service.UserService;
 
+
 /**
  * 用户身份验证,授权 Realm 组件
  * 

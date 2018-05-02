@@ -4,7 +4,10 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <properties>
-        <property name="dialectClass" value="com.dai.jigsaw.core.feature.orm.dialect.MySql5Dialect"/>
+   		<!-- mysql分页-->
+        <property name="dialectClass" value="com.dai.jigsaw.core.feature.orm.dialect.MySql5Dialect"/> 
+        <!-- oracle分页
+        <property name="dialectClass" value="com.dai.jigsaw.core.feature.orm.dialect.OracleDialect"/>-->
     </properties>
 
     <!-- 配置mybatis的缓存，延迟加载等等一系列属性 -->

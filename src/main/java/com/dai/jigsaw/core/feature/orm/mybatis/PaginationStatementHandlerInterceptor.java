@@ -49,7 +49,7 @@ public class PaginationStatementHandlerInterceptor implements Interceptor {
         if (rowBounds == null || rowBounds == RowBounds.DEFAULT) {
             return invocation.proceed();
         }
-
+        
         Configuration configuration = (Configuration) metaStatementHandler.getValue("delegate.configuration");
         Dialect dialect = DialectFactory.buildDialect(configuration);
         String originalSql = (String) metaStatementHandler.getValue("delegate.boundSql.sql");

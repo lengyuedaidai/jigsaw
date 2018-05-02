@@ -21,8 +21,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.dai.jigsaw.web.model.User;
 import com.dai.jigsaw.web.security.PermissionSign;
 import com.dai.jigsaw.web.security.RoleSign;
-//import com.dai.jigsaw.web.security.TokenManager;
+import com.dai.jigsaw.web.security.TokenManager;
 import com.dai.jigsaw.web.service.UserService;
+
 
 /**
  * 用户控制器
@@ -39,6 +40,7 @@ public class UserController {
 
 	/**
 	 * 用户登录
+	 * 
 	 * @param user
 	 * @param result
 	 * @return
@@ -59,9 +61,8 @@ public class UserController {
 			// 身份验证
 			UsernamePasswordToken a = new UsernamePasswordToken(
 					user.getUsername(), user.getPassword());
-			//TokenManager.addToken(a, request.getSession());
+			TokenManager.addToken(a, request.getSession());
 			subject.login(a);
-			subject.getPrincipals();
 			// 验证成功在Session中保存用户信息
 			final User authUserInfo = userService
 					.selectByUsername(user.getUsername());
