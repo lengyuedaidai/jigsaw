@@ -5,7 +5,7 @@ import java.util.Set;
 
 import redis.clients.jedis.Jedis;
 
-public class redisTest {
+public class RedisTest {
     public static void main(String[] args) {
         //连接本地的 Redis 服务
         Jedis jedis = new Jedis("192.168.0.104");

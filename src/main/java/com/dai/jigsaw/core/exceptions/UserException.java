@@ -1,13 +1,15 @@
-package com.dai.jigsaw.core.entity;
+package com.dai.jigsaw.core.exceptions;
 
 /**
  * UserException : 用户自定义异常
  *
- * @author StarZou
- * @since 2014-09-27 18:12
  */
 public class UserException extends RuntimeException {
-
+	
+	public UserException(String message){
+		super(message);
+	}
+	
     /**
      * 异常发生时间
      */
