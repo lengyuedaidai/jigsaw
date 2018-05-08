@@ -6,26 +6,28 @@ import java.util.Map;
 /**
  * ErrorResult : 用于响应错误的请求的对象
  *
- * @author StarZou
- * @since 2014-09-27 16:38
  */
 public class ErrorResult extends Result {
     private static final long serialVersionUID = 8567221653356186674L;
-
-    /**
-     * 封装多个 错误信息
-     */
-    private Map<String, Object> errors = new HashMap();
-
-    public Map<String, Object> getErrors() {
-        return errors;
-    }
-
-    public void setErrors(Map<String, Object> errors) {
-        this.errors = errors;
-    }
+    public static int UNKOWN = 100;
+    public static int TOKEN_UNKOWN = 200;
+    public static int TOKEN_CREATE_FAILD = 201;
+    public static int TOKEN_VERIFY_FAILD = 202;
+    
+    
 
     public ErrorResult() {
-
+    	this(UNKOWN,"未知错误，请联系管理员");
+    }
+    public ErrorResult(String message) {
+    	this(UNKOWN,message);
+    }
+    public ErrorResult(int statusCode) {
+    	this(statusCode,"");
+    }
+    public ErrorResult(int statusCode,String message) {
+    	super.setSuccess(false);
+    	super.setMessage(message);
+    	super.setStatusCode(statusCode);
     }
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import com.dai.jigsaw.core.feature.orm.mybatis.Page;
 import com.dai.jigsaw.core.feature.orm.mybatis.WhereParam;
 
+
 /**
  * 所有自定义Dao的顶级接口, 封装常用的增删查改操作,
  * 可以通过Mybatis Generator Maven 插件自动生成Dao,
@@ -13,7 +14,7 @@ import com.dai.jigsaw.core.feature.orm.mybatis.WhereParam;
  * Model : 代表数据库中的表 映射的Java对象类型
  * PK :代表对象的主键类型
  *
- * @author StarZou
+ * @author daidai
  * @since 2014年6月9日 下午6:14:06
  */
 public interface GenericDao<Model, PK> {

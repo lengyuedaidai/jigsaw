@@ -5,10 +5,8 @@ import java.io.Serializable;
 /**
  * Result : 响应的结果对象
  *
- * @author StarZou
- * @since 2014-09-27 16:28
  */
-public class Result implements Serializable {
+public class Result<T> implements Serializable {
     private static final long serialVersionUID = 6288374846131788743L;
 
     /**
@@ -26,6 +24,10 @@ public class Result implements Serializable {
      */
     private boolean success;
 
+    /**
+     * 数据
+     */
+    private T data;
 
     public String getMessage() {
         return message;
@@ -51,7 +53,17 @@ public class Result implements Serializable {
         this.statusCode = statusCode;
     }
 
-    public Result() {
+    
+    
+    public T getData() {
+		return data;
+	}
+
+	public void setData(T data) {
+		this.data = data;
+	}
+
+	public Result() {
 
     }
 }

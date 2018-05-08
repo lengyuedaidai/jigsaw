@@ -5,13 +5,14 @@ import java.util.List;
 import com.dai.jigsaw.core.feature.orm.mybatis.Page;
 import com.dai.jigsaw.core.feature.orm.mybatis.WhereParam;
 
+
 /**
  * 所有自定义Service的顶级接口,封装常用的增删查改操作
  * <p/>
  * Model : 代表数据库中的表 映射的Java对象类型
  * PK :代表对象的主键类型
  *
- * @author StarZou
+ * @author daidai
  * @since 2014年6月9日 下午6:14:06
  */
 public interface GenericService<Model, PK> {
