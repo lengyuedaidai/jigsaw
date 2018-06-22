@@ -5,8 +5,6 @@ import org.apache.ibatis.session.Configuration;
 /**
  * 数据库方言工厂,产生方言对象
  * 
- * @author StarZou
- * @since 2014年5月18日 下午1:32:23
  **/
 public class DialectFactory {
 
